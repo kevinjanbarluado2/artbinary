@@ -2,16 +2,27 @@ const chalk = require('chalk');
 const log = console.log;
 process.title = "HelloWorld.eth";
 
+
 let createArt = () => {
-    //let Randomize = () => Math.floor(Math.random() * 500) + 500;
+
     setInterval(() => {
-        addRandom="";
+        addRandom = "";
         for ($x = 0; $x < 100; $x++) {
-            addRandom+= Math.floor(Math.random() * 2);
+            addRandom += Math.floor(Math.random() * 2);
         }
 
         paint = `${addRandom}`
-        log(chalk.green(paint))
+
+        let randomColor = Math.floor(Math.random() * 4) + 1;
+        switch (randomColor) {
+            case 1: log(chalk.green.bold(paint)); break;
+            case 2: log(chalk.blue.bold(paint)); break;
+            case 3: log(chalk.red.bold(paint)); break;
+            case 4: log(chalk.white.bold(paint)); break;
+            default:break;
+
+        }
+
 
     }, 100)
 
